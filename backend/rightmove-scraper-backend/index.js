@@ -1,26 +1,27 @@
-//index.js backend 
 import express from 'express';
-import cors from 'cors';
-import { scrapeRightmove } from './scraper.js';
+import { scrapeRightmove } from './scraper.js';  // Import the scraper function
 
 const app = express();
-app.use(cors()); // Allow frontend to access backend
-app.use(express.json());
+const port = 3001;
 
-app.get('/scrape', async (req, res) => {
-    const { location, minPrice, maxPrice } = req.query;
+// Test route to verify the server is running
+app.get('/', (req, res) => {
+    res.send('Server is up and running!');
+});
 
-    const searchUrl = `https://www.rightmove.co.uk/property-for-sale/find.html?locationIdentifier=REGION%5E${location}&minPrice=${minPrice}&maxPrice=${maxPrice}`;
-
+// Route for scraping Rightmove properties
+app.get('/scrape-properties', async (req, res) => {
+    const searchUrl = 'https://www.rightmove.co.uk/property-for-sale/find.html?locationIdentifier=REGION%5E87490&index=0&propertyTypes=&mustHave=&dontShow=&furnishTypes=&keywords='; 
     try {
         const properties = await scrapeRightmove(searchUrl);
-        res.json(properties);
+        res.json(properties);  // Return scraped property data as JSON
     } catch (error) {
-        console.error('Scraping failed:', error); // Logs error to console
-        res.status(500).json({ error: 'Scraping failed', details: error.message });
+        console.error('Error during scraping:', error);
+        res.status(500).json({ error: 'Failed to scrape properties' });
     }
 });
 
-
-const PORT = 5002;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start the server
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
