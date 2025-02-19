@@ -1,3 +1,4 @@
+//index.js backend 
 import express from 'express';
 import cors from 'cors';
 import { scrapeRightmove } from './scraper.js';
@@ -21,5 +22,5 @@ app.get('/scrape', async (req, res) => {
 });
 
 
-const PORT = 5000;
+const PORT = 5002;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

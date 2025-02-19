@@ -9,8 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
+    "apify": "^3.3.0",
+    "axios": "^1.7.9",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "puppeteer": "^24.2.1"
