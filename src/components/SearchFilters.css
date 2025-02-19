@@ -1,0 +1,102 @@
+/* Modal Container */
+.search-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    z-index: 1050;
+  }
+  
+  /* Overlay for background blur */
+  .search-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: 1040;
+  }
+  
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .close-btn:hover {
+    color: #333;
+  }
+  
+  /* Form Controls */
+  .search-filters-form-control {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  
+  /* Labels */
+  .search-filters-form-control .MuiFormLabel-root {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  /* Select Inputs */
+  .MuiSelect-select {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+  
+  /* Buttons */
+  .search-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .search-filters-button {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .search-button {
+    background-color: #007bff;
+    color: white;
+    margin-right: 10px;
+    border: none;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .reset-button {
+    background-color: #e0e0e0;
+    color: black;
+    border: none;
+  }
+  
+  .reset-button:hover {
+    background-color: #c6c6c6;
+  }
+

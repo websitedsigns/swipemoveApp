@@ -1,0 +1,73 @@
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items at the top */
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  background: linear-gradient(135deg, #5abae3, #459ed1); /* Gradient background */
+  color: white;
+  font-family: Arial, sans-serif;
+  cursor: pointer; /* Indicates the screen is clickable */
+  text-align: center;
+  padding: 0 20px; /* Add padding for better mobile experience */
+  box-sizing: border-box; /* Ensures padding is included in total height/width calculation */
+  overflow: hidden; /* Prevent overflow of elements */
+}
+
+.welcome-logo {
+  width: 100%; /* Make the logo responsive */
+  max-width: 800px; /* Max width to prevent it from getting too large */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 20%; /* Move logo higher on the screen */
+  margin-bottom: 20px; /* Space between logo and text */
+  opacity: 0;
+  animation: fadeIn 5s forwards;
+}
+
+.welcome-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-subtext {
+  font-size: 1.5rem;
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 2.5rem; /* Smaller font size for smaller screens */
+  }
+
+  .welcome-subtext {
+    font-size: 1.2rem; /* Smaller font size for subtext */
+  }
+
+  /* Adjust the welcome container padding on smaller devices */
+  .welcome-container {
+    padding: 0 15px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
